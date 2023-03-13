@@ -22,6 +22,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag rhamdeew/docker-php-74-fpm-alpine:$(date +%s)
     - name: Docker push
-      env:
-        DOCKER_USER: ${{secrets.DOCKER_USER}}
-      run: docker push $DOCKER_USER/docker-php-74-fpm-alpine
+      run: docker push ${{secrets.DOCKER_USER}}/docker-php-74-fpm-alpine
